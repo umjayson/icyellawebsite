@@ -11,7 +11,7 @@
     const div = document.createElement("div");
     div.className = "crack";
     div.innerHTML =
-      '<svg viewBox="0 0 400 10" preserveAspectRatio="none"><polyline points="0,5 60,5 75,2 90,8 110,5 400,5" fill="none" stroke="#2C7DA0" stroke-width="1"/></svg>';
+      '<svg viewBox="0 0 400 10" preserveAspectRatio="none"><polyline points="0,5 60,5 75,2 90,8 110,5 400,5" fill="none" stroke="#D6538B" stroke-width="1"/></svg>';
     return div;
   }
 
