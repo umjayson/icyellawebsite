@@ -1,9 +1,5 @@
 /* =========================================================
    SITE CONFIG
-   This is the ONLY file you need to touch when your Discord
-   server gets deleted/changed. Update INVITE_URL below,
-   re-upload this one file, and the homepage will redirect
-   everyone automatically.
    ========================================================= */
 
 const SITE_CONFIG = {
