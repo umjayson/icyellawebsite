@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>icyella</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="frost-field"></div>
+
+<nav class="nav">
+  <a href="index.html" class="nav__brand">
+    <svg class="shard" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" fill="#2C7DA0"/>
+    </svg>
+    icyella
+  </a>
+  <div class="nav__links">
+    <a href="index.html" class="active">Home</a>
+    <a href="scammers.html">Scammer Database</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero__card">
+    <div class="hero__eyebrow" id="statusEyebrow">
+      <span class="pulse-dot"></span>
+      <span id="statusText">Checking server status…</span>
+    </div>
+    <h1 class="hero__title" id="heroTitle">Welcome to icyella</h1>
+    <p class="hero__desc" id="heroDesc">
+      This is the home base for the icyella Discord community. If the server
+      ever gets taken down, this page will automatically point you to the new one.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" id="inviteBtn" href="#" target="_blank" rel="noopener noreferrer">Join the server →</a>
+      <a class="btn btn--ghost" href="scammers.html">View scammer database</a>
+    </div>
+    <div class="hero__timer" id="timerText" style="display:none;"></div>
+
+    <div class="hero__fallback">
+      Bookmark <strong>icyella.com</strong> — it always has the current invite link and a running list of reported scammers, even if Discord servers change.
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">icyella.com</footer>
+
+<script src="config.js"></script>
+<script>
+  const inviteBtn = document.getElementById("inviteBtn");
+  const statusText = document.getElementById("statusText");
+  const heroTitle = document.getElementById("heroTitle");
+  const heroDesc = document.getElementById("heroDesc");
+  const timerText = document.getElementById("timerText");
+
+  inviteBtn.href = SITE_CONFIG.INVITE_URL;
+
+  if (SITE_CONFIG.SERVER_DELETED) {
+    statusText.textContent = "The old server is gone — redirecting you to the new one";
+    heroTitle.textContent = "We moved servers";
+    heroDesc.textContent = "The previous Discord server was deleted. You'll be redirected to the new invite automatically, or you can click below right now.";
+    timerText.style.display = "block";
+
+    let secondsLeft = SITE_CONFIG.REDIRECT_DELAY;
+    timerText.textContent = `Redirecting in ${secondsLeft}s…`;
+    const interval = setInterval(() => {
+      secondsLeft -= 1;
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        window.location.href = SITE_CONFIG.INVITE_URL;
+      } else {
+        timerText.textContent = `Redirecting in ${secondsLeft}s…`;
+      }
+    }, 1000);
+  } else {
+    statusText.textContent = "Server is active";
+    heroTitle.textContent = "Welcome to icyella";
+    heroDesc.textContent = "This is the home base for the icyella Discord community. If the server ever gets taken down, this page will automatically point you to the new one — no need to go looking for it.";
+  }
+</script>
+</body>
+</html>
