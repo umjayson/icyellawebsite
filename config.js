@@ -12,7 +12,7 @@ const SITE_CONFIG = {
   SERVER_DELETED: false,
 
   // Current/new Discord invite link. Always keep this up to date.
-  INVITE_URL: "https://discord.gg/your-invite-code",
+  INVITE_URL: "https://discord.gg/icyella",
 
   // Seconds to wait before auto-redirecting (only used when SERVER_DELETED is true).
   REDIRECT_DELAY: 6,
