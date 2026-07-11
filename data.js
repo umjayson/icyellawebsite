@@ -1,9 +1,5 @@
 /* =========================================================
    SCAMMER DATABASE ENTRIES
-   Add a new object to this array for each report.
-   category: pick one from CATEGORIES below (or add a new one there too)
-   proofs: array of { url, label } — label is optional.
-           Use label: "ONGOING" for proof that's still being added to.
    ========================================================= */
 
 const CATEGORIES = [
