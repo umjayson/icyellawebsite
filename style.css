@@ -1,17 +1,17 @@
 /* =========================================================
    icyella — design tokens
-   Palette: frost/glacier, built for a Discord community
+   Palette: candy-pink & lace, built for a Discord community
    Display: Space Grotesk / Body: IBM Plex Sans / Data: IBM Plex Mono
    ========================================================= */
 :root {
-  --ice-white:   #EFF6FA;
-  --frost:       #CFE8F3;
-  --frost-soft:  #E4F1F7;
-  --glacier:     #2C7DA0;
-  --glacier-dark:#1B4965;
-  --navy:        #0B2545;
-  --coral:       #E85D4C;
-  --coral-soft:  #FCEAE7;
+  --ice-white:   #FDF1F6;
+  --frost:       #F5C7DC;
+  --frost-soft:  #FBE3EE;
+  --glacier:     #D6538B;
+  --glacier-dark:#9C2F63;
+  --navy:        #5C1638;
+  --coral:       #C2447A;
+  --coral-soft:  #FBE1EC;
   --white:       #FFFFFF;
 
   --font-display: 'Space Grotesk', sans-serif;
@@ -19,7 +19,7 @@
   --font-mono: 'IBM Plex Mono', monospace;
 
   --radius: 14px;
-  --shadow-frost: 0 8px 30px rgba(11, 37, 69, 0.08);
+  --shadow-frost: 0 8px 30px rgba(156, 47, 99, 0.12);
 }
 
 * { box-sizing: border-box; }
@@ -42,9 +42,9 @@ a { color: inherit; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 15% 20%, rgba(44,125,160,0.10), transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(44,125,160,0.08), transparent 45%),
-    linear-gradient(180deg, #F6FBFD 0%, var(--ice-white) 100%);
+    radial-gradient(circle at 15% 20%, rgba(214,83,139,0.12), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(214,83,139,0.10), transparent 45%),
+    linear-gradient(180deg, #FEF6FA 0%, var(--ice-white) 100%);
 }
 
 /* ---------- nav ---------- */
@@ -68,8 +68,10 @@ a { color: inherit; }
 }
 
 .nav__brand .shard {
-  width: 18px; height: 18px;
+  width: 22px; height: 22px;
   display: inline-block;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .nav__links {
@@ -110,7 +112,7 @@ a { color: inherit; }
   border-radius: 22px;
   padding: 52px 48px;
   box-shadow: var(--shadow-frost);
-  border: 1px solid rgba(44,125,160,0.12);
+  border: 1px solid rgba(214,83,139,0.14);
   overflow: hidden;
 }
 
@@ -119,7 +121,7 @@ a { color: inherit; }
   position: absolute;
   top: -60px; right: -60px;
   width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(44,125,160,0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(214,83,139,0.18), transparent 70%);
 }
 
 .hero__eyebrow {
@@ -138,13 +140,13 @@ a { color: inherit; }
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--glacier);
-  box-shadow: 0 0 0 0 rgba(44,125,160,0.6);
+  box-shadow: 0 0 0 0 rgba(214,83,139,0.6);
   animation: pulse 2s infinite;
 }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(44,125,160,0.45); }
-  70%  { box-shadow: 0 0 0 10px rgba(44,125,160,0); }
-  100% { box-shadow: 0 0 0 0 rgba(44,125,160,0); }
+  0%   { box-shadow: 0 0 0 0 rgba(214,83,139,0.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(214,83,139,0); }
+  100% { box-shadow: 0 0 0 0 rgba(214,83,139,0); }
 }
 
 .hero__title {
@@ -158,7 +160,7 @@ a { color: inherit; }
 .hero__desc {
   font-size: 1rem;
   line-height: 1.6;
-  color: #3B5570;
+  color: #7A4A5F;
   margin: 0 0 30px;
 }
 
@@ -200,17 +202,11 @@ a { color: inherit; }
 .hero__timer {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: #6C8AA3;
+  color: #B57A93;
   margin-top: 22px;
 }
 
-.hero__fallback {
-  font-size: 0.85rem;
-  color: #6C8AA3;
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px dashed var(--frost);
-}
+
 
 /* ---------- scammer database page ---------- */
 .page {
@@ -231,7 +227,7 @@ a { color: inherit; }
 }
 
 .page__desc {
-  color: #3B5570;
+  color: #7A4A5F;
   line-height: 1.6;
   max-width: 60ch;
   margin: 0 0 6px;
@@ -239,7 +235,7 @@ a { color: inherit; }
 
 .page__note {
   font-size: 0.82rem;
-  color: #7A93A9;
+  color: #C284A0;
   font-family: var(--font-mono);
   margin-top: 14px;
 }
@@ -274,14 +270,14 @@ a { color: inherit; }
 }
 .search-box input:focus {
   border-color: var(--glacier);
-  box-shadow: 0 0 0 3px rgba(44,125,160,0.15);
+  box-shadow: 0 0 0 3px rgba(214,83,139,0.18);
 }
 .search-box svg {
   position: absolute;
   left: 15px; top: 50%;
   transform: translateY(-50%);
   width: 18px; height: 18px;
-  color: #7A93A9;
+  color: #C284A0;
 }
 
 .pills {
@@ -312,7 +308,7 @@ a { color: inherit; }
 .count-line {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #7A93A9;
+  color: #C284A0;
   margin-top: -6px;
 }
 
@@ -333,7 +329,7 @@ a { color: inherit; }
 
 .case {
   background: var(--white);
-  border: 1px solid rgba(44,125,160,0.12);
+  border: 1px solid rgba(214,83,139,0.14);
   border-radius: var(--radius);
   padding: 22px 24px;
   box-shadow: var(--shadow-frost);
@@ -383,7 +379,7 @@ a { color: inherit; }
 .case__explanation {
   font-size: 0.95rem;
   line-height: 1.55;
-  color: #24425E;
+  color: #5C2A40;
   margin: 0 0 16px;
 }
 
@@ -424,7 +420,7 @@ a { color: inherit; }
 .empty-state {
   text-align: center;
   padding: 60px 20px;
-  color: #7A93A9;
+  color: #C284A0;
   font-family: var(--font-mono);
   font-size: 0.9rem;
 }
@@ -437,7 +433,7 @@ a { color: inherit; }
   border: 1px dashed var(--frost);
   font-size: 0.88rem;
   line-height: 1.6;
-  color: #24425E;
+  color: #5C2A40;
 }
 .dispute-box strong { color: var(--navy); }
 
@@ -446,7 +442,7 @@ footer.site-footer {
   padding: 30px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: #90A9BD;
+  color: #D19DB4;
 }
 
 @media (max-width: 640px) {
