@@ -4,10 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>icyella</title>
+  
+<meta property="og:title" content="icyella's basement" />
+<meta property="og:image" content="https://icyella.com/favicon.gif" />
+<meta property="theme-color" content="#ff69b4" />
+  
 <link rel="icon" type="image/gif" href="favicon.gif" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 </head>
 <body>
 <div class="frost-field"></div>
@@ -31,8 +37,7 @@
     </div>
     <h1 class="hero__title" id="heroTitle">Welcome to icyella</h1>
     <p class="hero__desc" id="heroDesc">
-      This is the home base for the icyella Discord community. If the server
-      ever gets taken down, this page will automatically point you to the new one.
+      If the server ever gets taken down, this page will automatically point you to the new one.
     </p>
     <div class="hero__actions">
       <a class="btn btn--primary" id="inviteBtn" href="#" target="_blank" rel="noopener noreferrer">Join the server →</a>
@@ -74,7 +79,7 @@
   } else {
     statusText.textContent = "Server is active";
     heroTitle.textContent = "Welcome to icyella";
-    heroDesc.textContent = "This is the home base for the icyella Discord community. If the server ever gets taken down, this page will automatically point you to the new one — no need to go looking for it.";
+    heroDesc.textContent = "If the server ever gets taken down, this page will automatically point you to the new one.";
   }
 </script>
 </body>
